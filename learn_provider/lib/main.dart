@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:learn_provider/Provider/Screens/count_screen.dart';
+import 'package:learn_provider/Provider/Screens/example_one.dart';
 import 'package:learn_provider/Provider/count_provider.dart';
+import 'package:learn_provider/Provider/example_one_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -14,8 +16,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return ChangeNotifierProvider(
-        create: (_) => CountProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CountProvider()),
+        ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
+      ],
+
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -37,7 +43,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: CountScreen(),
+        home: ExampleOne(),
       ) ,
     );
 
