@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_provider/Provider/Screens/Favourite/favourite_screen.dart';
 import 'package:learn_provider/Provider/Screens/count_screen.dart';
 import 'package:learn_provider/Provider/Screens/example_one.dart';
 import 'package:learn_provider/Provider/count_provider.dart';
@@ -23,8 +24,10 @@ class MyApp extends StatelessWidget {
       ],
 
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
+
           // This is the theme of your application.
           //
           // TRY THIS: Try running your application with "flutter run". You'll see
@@ -43,7 +46,8 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: ExampleOne(),
+
+        home: FavouriteScreen(),
       ) ,
     );
 
